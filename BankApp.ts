@@ -35,7 +35,7 @@ class BankAccount {
   }
 
   private generateAccountNumber(): string {
-    const accountTypePrefix = this.constructor === SavingsAccount ? 'Sav' : 'Curr';
+    const accountTypePrefix = this.constructor === SavingsAccount ? 'Sav' : 'Cur';
     return `${accountTypePrefix}${Math.floor(100000 + Math.random() * 900000)}`;
   }
 
@@ -98,10 +98,17 @@ class CurrentAccount extends BankAccount {
   ) {
     super(customerName, age, location, state, country, email, initialBalance);
   }
+  deposit(amount: number) {
+    if (amount >= 800) {
+      super.deposit(amount);
+    } else {
+      console.log('Minimum deposit for Current Account is 800.');
+    }
+  }
 
   withdraw(amount: number) {
     if (amount > this.balance) {
-      console.log('Balance is less');
+      console.log('Balance is less, Use Overdraft');
     } else {
       super.withdraw(amount);
     }
@@ -238,7 +245,7 @@ function withdrawMoney() {
     if (account) {
       rl.question('Enter the amount to withdraw: ', (amount) => {
         account.withdraw(parseFloat(amount));
-        console.log(`Withdrawal successful. Current balance: ${account.balance}`);
+        console.log(`Current balance: ${account.balance}`);
         displayMenu();
         processInput();
       });
@@ -256,7 +263,7 @@ function depositMoney() {
     if (account) {
       rl.question('Enter the amount to deposit: ', (amount) => {
         account.deposit(parseFloat(amount));
-        console.log(`Deposit successful. Current balance: ${account.balance}`);
+        console.log(`Current balance: ${account.balance}`);
         displayMenu();
         processInput();
       });
@@ -300,3 +307,4 @@ function processInput() {
 
 displayMenu();
 processInput();
+
