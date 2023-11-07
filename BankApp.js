@@ -55,7 +55,6 @@ var BankAccount = /** @class */ (function () {
     BankAccount.prototype.getAccountDetails = function () {
         return "Customer Name: ".concat(this.customerName, "\nEmail ID: ").concat(this.email, "\nType of Account: ").concat(this.constructor.name, "\nTotal Balance: ").concat(this.balance);
     };
-    BankAccount.accountNumberCounter = 1000;
     return BankAccount;
 }());
 var SavingsAccount = /** @class */ (function (_super) {
@@ -80,9 +79,17 @@ var CurrentAccount = /** @class */ (function (_super) {
         if (initialBalance === void 0) { initialBalance = 0; }
         return _super.call(this, customerName, age, location, state, country, email, initialBalance) || this;
     }
+    CurrentAccount.prototype.deposit = function (amount) {
+        if (amount >= 800) {
+            _super.prototype.deposit.call(this, amount);
+        }
+        else {
+            console.log('Minimum deposit for Current Account is 800.');
+        }
+    };
     CurrentAccount.prototype.withdraw = function (amount) {
         if (amount > this.balance) {
-            console.log('Balance is less');
+            console.log('Balance is less, Use Overdraft');
         }
         else {
             _super.prototype.withdraw.call(this, amount);
@@ -252,3 +259,4 @@ function processInput() {
 }
 displayMenu();
 processInput();
+
