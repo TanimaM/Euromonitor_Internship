@@ -185,7 +185,7 @@ function createNewAccount() {
                             displayMenu();
                             processInput();
                           } catch (error) {
-                            console.log(error.message);
+                            console.log("Error");
                             displayMenu();
                             processInput();
                           }
