@@ -18,7 +18,7 @@ export class TodoComponent {
   }
 
   public deleteTask(task: any): void {
-    const index = this.tasks.indexOf(task);
+    let index = this.tasks.indexOf(task);
     if (index !== -1) {
       this.tasks.splice(index, 1);
     }
@@ -31,7 +31,7 @@ export class TodoComponent {
   }
 
   public deleteCompletedTask(completedTask: any):void {
-    const index = this.completedTasks.indexOf(completedTask);
+    let index = this.completedTasks.indexOf(completedTask);
     if (index !== -1) {
       this.completedTasks.splice(index, 1);
     }
