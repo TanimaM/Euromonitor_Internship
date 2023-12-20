@@ -1,0 +1,42 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #4CAF50; 
+    overflow: hidden;
+  }
+  
+  nav li {
+    float: center;
+    border-right: 1px solid white; 
+  }
+  
+  nav li:last-child {
+    border-right: none; 
+  }
+  
+  nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border: 1px solid white; 
+  }
+  
+  nav a:hover {
+    background-color: #45a049; 
+  }
+  
