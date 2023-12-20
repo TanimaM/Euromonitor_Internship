@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PaymentDataService {
-getPaymentDetails(): string {
+public getPaymentDetails(): string {
     return 'Payment details from the Payment Module Service';
   }
 }
