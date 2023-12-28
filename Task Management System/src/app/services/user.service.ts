@@ -12,7 +12,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  getUserByUsernameAndPassword(username: string, password: string): Observable<any> {
+  public getUserByUsernameAndPassword(username: string, password: string): Observable<any> {
     return this.http.get(`${this.apiUrl}?username=${username}&password=${password}`)
       .pipe(
         map((users: any) => {
