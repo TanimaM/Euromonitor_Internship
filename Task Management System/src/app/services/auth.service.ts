@@ -19,7 +19,7 @@ export class AuthService {
     }
   }
 
-  login(username: string, password: string): Observable<any> {
+ public login(username: string, password: string): Observable<any> {
     return this.userService.getUserByUsernameAndPassword(username, password)
       .pipe(
         map(user => this.handleLogin(user)),
@@ -27,7 +27,7 @@ export class AuthService {
       );
   }
 
-  handleLogin(user: any): any {
+  public handleLogin(user: any): any {
     this.isLogged = user !== null;
     if (this.isLogged) {
       this.storeUser(user);
@@ -37,28 +37,28 @@ export class AuthService {
     return user;
   }
 
-  storeUser(user: any): void {
+  public storeUser(user: any): void {
     localStorage.setItem(this.AUTH_KEY, JSON.stringify(user));
     this.authenticatedUserId = user.id;
   }
 
-  handleError(error: any): void {
+  public handleError(error: any): void {
     this.logout();
     throw error;
   }
 
-  logout(): void {
+  public logout(): void {
     localStorage.removeItem(this.AUTH_KEY);
     this.isLogged = false;
     this.authenticatedUserId = null;
     this.router.navigate(['/login']);
   }
 
-  isAuthenticatedUser(): boolean {
+  public isAuthenticatedUser(): boolean {
     return localStorage.getItem(this.AUTH_KEY) !== null;
   }
 
-  getAuthenticatedUserId(): number | null {
+  public getAuthenticatedUserId(): number | null {
     const authData = localStorage.getItem(this.AUTH_KEY);
     if (authData) {
       const user = JSON.parse(authData);
