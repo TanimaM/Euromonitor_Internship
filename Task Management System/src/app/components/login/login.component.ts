@@ -23,7 +23,7 @@ export class LoginComponent {
     });
   }
 
-  submitForm(): void {
+  public submitForm(): void {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
       this.authService.login(username, password).subscribe(
@@ -46,7 +46,7 @@ export class LoginComponent {
       );
     }
   }
-  logout(): void {
+  public logout(): void {
     this.authService.logout();
   }
 }
