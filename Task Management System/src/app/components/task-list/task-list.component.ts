@@ -16,11 +16,11 @@ import { AuthService } from 'src/app/services/auth.service';
   providers: [DateSortPipe] 
 })
 export class TaskListComponent implements OnInit {
-  tasks: Task[] = [];
-  filterCategory = '';
-  categories: string[] = [];
-  tasksFiltered: Task[] = [];
-  sortByDueDate = false;
+  public tasks: Task[] = [];
+  public filterCategory = '';
+  public categories: string[] = [];
+  public tasksFiltered: Task[] = [];
+  public sortByDueDate = false;
 
   constructor(
     private taskService: TaskService,
@@ -42,7 +42,7 @@ export class TaskListComponent implements OnInit {
 
 
 
-    loadTasks(): void {
+    public loadTasks(): void {
       const userId = this.authService.getAuthenticatedUserId();
       if (userId !== null) {
         this.taskService.getTasksByUserId(userId).subscribe(tasks => {
@@ -58,14 +58,14 @@ export class TaskListComponent implements OnInit {
     }
   
 
-  extractCategories(): void {
+ public extractCategories(): void {
     this.categories = Array.from(
       new Set(this.tasks.map((task) => task.category))
     )
     .filter((category): category is string => !!category); 
   }
 
-  filterTasks(): void {
+ public filterTasks(): void {
     let filteredTasks = this.tasks;
     if (this.filterCategory) {
       filteredTasks = filteredTasks.filter(task => task.category === this.filterCategory);
@@ -74,16 +74,16 @@ export class TaskListComponent implements OnInit {
     this.tasksFiltered = filteredTasks;
   }
 
-  onFilterCategoryChange(): void {
+ public onFilterCategoryChange(): void {
     this.filterTasks();
   }
 
-  toggleSortByDueDate(): void {
+ public toggleSortByDueDate(): void {
     this.sortByDueDate = !this.sortByDueDate;
     this.loadTasks(); 
   }
 
-  editTask(task: Task): void {
+public editTask(task: Task): void {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
       data: { ...task }, 
     });
@@ -106,14 +106,14 @@ export class TaskListComponent implements OnInit {
   }
   
 
-  deleteTask(id: number): void {
+  public deleteTask(id: number): void {
     this.taskService.deleteTask(id).subscribe(() => {
       this.loadTasks();
       this.extractCategories(); 
     });
   }
 
-  openTaskDialog(): void {
+  public openTaskDialog(): void {
     const dialogRef = this.dialog.open(TaskDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
@@ -123,7 +123,7 @@ export class TaskListComponent implements OnInit {
     });
   }
 
-  addTask(newTask: Task): void {
+  public addTask(newTask: Task): void {
     const userId = this.authService.getAuthenticatedUserId();
 
     if (userId !== null) {
@@ -136,7 +136,7 @@ export class TaskListComponent implements OnInit {
     }
   }
 
-  updateTask(id: number, updatedTask: Task): void {
+  public updateTask(id: number, updatedTask: Task): void {
     this.taskService.editTask({ ...updatedTask, id }).subscribe(() => {
       const index = this.tasks.findIndex(task => task.id === id);
       if (index !== -1) {
