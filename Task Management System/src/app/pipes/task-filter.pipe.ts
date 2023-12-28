@@ -6,7 +6,7 @@ import { Task } from '../models/task.model';
   name: 'taskFilter'
 })
 export class TaskFilterPipe implements PipeTransform {
-  transform(tasks: Task[], filterCategory: string): Task[] {
+  public transform(tasks: Task[], filterCategory: string): Task[] {
     if (!filterCategory) {
       return tasks; 
     }
