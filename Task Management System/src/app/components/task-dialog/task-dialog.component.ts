@@ -35,7 +35,7 @@ export class TaskDialogComponent {
     });
   }
 
-  submitForm(): void {
+  public submitForm(): void {
     if (this.taskForm.valid) {
       const editedTask: Task = this.taskForm.value;
       this.dialogRef.close(editedTask);
