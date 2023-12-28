@@ -1,0 +1,49 @@
+
+h1{
+  text-align: center;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  app-root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  mat-toolbar {
+    order: -1; 
+  }
+  
+  .mat-toolbar-row {
+    justify-content: flex-start; 
+    padding-left: 16px; 
+    padding-right: 16px; 
+  }
+  
+  button {
+    margin-right: auto;
+  }
+
+mat-toolbar button {
+  margin-right: 20px; 
+  margin-top: 30px;
+  color: white; 
+  background-color: #2196F3; 
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px; 
+  cursor: pointer;
+  transition: background-color 0.3s; 
+}
+
+mat-toolbar button:hover {
+  background-color: #1565c0; 
+}
+
+  
+  
+  

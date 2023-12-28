@@ -1,0 +1,19 @@
+
+<h1>Task Management System</h1>
+<div>
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <mat-form-field appearance="fill">
+      <mat-label for="username">Username:</mat-label>
+      <input matInput type="text" id="username" formControlName="username" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label for="password">Password:</mat-label>
+      <input matInput type="password" id="password" formControlName="password" required>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit">Login</button>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </form>
+</div>

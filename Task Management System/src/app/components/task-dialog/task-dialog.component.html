@@ -1,0 +1,25 @@
+<h1>{{ data ? 'Edit Task' : 'Add Task' }}</h1>
+<form [formGroup]="taskForm" (ngSubmit)="submitForm()">
+  <label for="title">Title:</label>
+  <input type="text" id="title" formControlName="title">
+
+  <label>
+    Completed:
+    <input type="checkbox" id="completed" formControlName="completed">
+  </label>
+  
+
+  <label for="category">Category:</label>
+  <select formControlName="category">
+    <option value="">All Categories</option>
+    <option value="work">Work</option>
+    <option value="personal">Personal</option>
+    <option value="shopping">Shopping</option>
+  </select>
+
+  <label for="dueDate">Due Date:</label>
+  <input type="date" id="dueDate" formControlName="dueDate">
+
+
+  <button type="submit">{{ data ? 'Update Task' : 'Add Task' }}</button>
+</form>

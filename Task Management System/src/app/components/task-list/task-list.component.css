@@ -1,0 +1,112 @@
+
+.task-list-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.filter-container {
+  margin-bottom: 20px;
+}
+
+button {
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.task-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 16px;
+}
+
+.divider {
+  margin: 16px 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+.filter-container {
+  margin-bottom: 20px; 
+}
+
+
+.filter-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold; 
+  color: #333; 
+}
+
+.filter-container select {
+  padding: 8px;
+  margin-bottom: 16px;
+  width: 100%; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[mat-fab] {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #1976D2; 
+  color: #fff; 
+}
+
+button[mat-fab]:hover {
+  background-color: #1565c0; 
+}
+
+
+.rectangular-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px; 
+  border-radius: 4px;
+  background-color: #1976D2; 
+  color: #ffffff; 
+}
+
+.task-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+
+
+button.delete-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px; 
+  background-color: red;
+  color: white;
+  
+}
+button.edit-button {
+  position: absolute;
+  bottom: 10px;
+  right: 100px; 
+  background-color: blue;
+  color: white;
+}
+
+.task-item.completed {
+  background-color: #f0f8ff;
+}
+.sort-button{
+  background-color: chartreuse;
+  color: #000;
+}

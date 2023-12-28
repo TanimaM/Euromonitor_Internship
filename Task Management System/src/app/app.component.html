@@ -1,0 +1,5 @@
+
+<mat-toolbar color="primary">
+  <button *ngIf="authService.isAuthenticatedUser()" mat-button (click)="logout()">Logout</button>
+</mat-toolbar>
+<router-outlet></router-outlet>

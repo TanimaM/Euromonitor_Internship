@@ -1,0 +1,30 @@
+
+<div class="task-list-container">
+
+  <div class="filter-container">
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter" [(ngModel)]="filterCategory" (change)="onFilterCategoryChange()">
+      <option value="">All</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <button mat-raised-button class="sort-button" (click)="toggleSortByDueDate()">Sort By Due Date</button>
+
+  <h2>Task List</h2>
+  <div *ngFor="let task of tasksFiltered" class="task-item">
+    <p>Task Title: {{ task.title }} 
+      <br><br>Completion Status: {{ task.completed ? 'Completed' : 'Incomplete' }} 
+      <br><br>Due Date: {{ task.dueDate | date }}</p>
+    <p *ngIf="task.category">Category: {{ task.category }}</p>
+    <button mat-raised-button (click)="editTask(task)" class="edit-button">Edit</button>
+    <button mat-raised-button color="warn" (click)="deleteTask(task.id)" class="delete-button">Delete</button>
+    <hr class="divider">
+  </div>
+
+  <button mat-button color="primary" (click)="openTaskDialog()" class="rectangular-button">
+    Add Task
+  </button>
+  
+
+</div>

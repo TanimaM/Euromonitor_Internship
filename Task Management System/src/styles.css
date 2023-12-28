@@ -1,0 +1,30 @@
+/* styles.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  app-root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  mat-toolbar {
+    order: -1; /* Move the toolbar to the top */
+  }
+  
+  .mat-toolbar-row {
+    justify-content: flex-end; /* Align items to the end (right) */
+    padding-left: 16px; /* Adjust padding as needed */
+    padding-right: 16px; /* Adjust padding as needed */
+  }
+  
+  button {
+    margin-left: auto; /* Push the button to the right */
+    margin-right: 16px; /* Add margin to the right for better spacing */
+  }
+  
+  

@@ -1,0 +1,126 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "John",
+      "password": "password1",
+      "name": "John M"
+    },
+    {
+      "id": 2,
+      "username": "Mark",
+      "password": "password2",
+      "name": "Mark R"
+    },
+    {
+      "id": 3,
+      "username": "Mary",
+      "password": "password3",
+      "name": "Mary S"
+    },
+    {
+      "id": 4,
+      "username": "Rose",
+      "password": "password4",
+      "name": "Rose V"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Prepare Project Proposal",
+      "completed": true,
+      "dueDate": "2023-12-25",
+      "category": "Work",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "title": " Grocery Shopping",
+      "completed": true,
+      "dueDate": "2023-12-30",
+      "category": "shopping",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "title": "Read a Book",
+      "completed": true,
+      "dueDate": "2023-12-20",
+      "category": "personal",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "title": "Exercise for 30 Minutes",
+      "completed": false,
+      "dueDate": "2023-12-20",
+      "category": "personal"
+    },
+    {
+      "title": "Attend Team Meeting",
+      "completed": true,
+      "dueDate": "2023-12-21",
+      "category": "work",
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "title": "Order New Shoes",
+      "completed": false,
+      "dueDate": "2023-12-19",
+      "category": "shopping",
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "id": 7,
+      "userId": 3,
+      "title": "Plan Vacation",
+      "completed": false,
+      "dueDate": "2023-12-20",
+      "category": "personal"
+    },
+    {
+      "id": 8,
+      "userId": 3,
+      "title": "Create Presentation for Client Meeting",
+      "completed": false,
+      "dueDate": "2023-12-21",
+      "category": "Work"
+    },
+    {
+      "id": 9,
+      "userId": 3,
+      "title": "Purchase Office Supplies",
+      "completed": false,
+      "dueDate": "2023-12-19",
+      "category": "shopping"
+    },
+    {
+      "id": 10,
+      "userId": 4,
+      "title": "Attend Yoga class",
+      "completed": false,
+      "dueDate": "2023-12-20",
+      "category": "personal"
+    },
+    {
+      "id": 11,
+      "userId": 4,
+      "title": "Review Code for Bug Fixes",
+      "completed": false,
+      "dueDate": "2023-12-21",
+      "category": "Work"
+    },
+    {
+      "id": 12,
+      "userId": 4,
+      "title": "Order New Phone",
+      "completed": false,
+      "dueDate": "2023-12-19",
+      "category": "shopping"
+    }
+  ]
+}
