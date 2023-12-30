@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./task-dialog.component.css']
 })
 export class TaskDialogComponent {
-  taskForm!: FormGroup;
-  filterCategory!: string; 
+  public taskForm!: FormGroup;
+  public filterCategory!: string; 
 
   constructor(
     private fb: FormBuilder,
