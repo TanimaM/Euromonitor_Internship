@@ -9,8 +9,8 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  loginForm: FormGroup;
-  errorMessage: string | null = null;
+  public loginForm: FormGroup;
+  public errorMessage: string | null = null;
 
   constructor(
     private fb: FormBuilder,
