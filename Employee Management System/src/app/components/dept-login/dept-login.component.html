@@ -1,0 +1,30 @@
+<nav class="navbar sticky-top navbar-dark bg-dark h-100">
+  <div class="container-fluid">
+    <a class="navbar-brand mx-auto" href="#">Move to the Home Page</a>
+  </div>
+</nav>
+<div class="container">
+  <div class="login-container">
+    <h2> Department Login </h2>
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="login-form">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username:</label>
+        <input formControlName="username" type="text" id="username" class="form-control" required>
+        <div *ngIf="loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched" class="text-danger">
+          Username is required
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input formControlName="password" type="password" id="password" class="form-control" required>
+        <div *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched" class="text-danger">
+          Password is required
+        </div>
+      </div>
+      <div *ngIf="errorMessage" class="text-danger mb-3">
+        {{ errorMessage }}
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+</div>

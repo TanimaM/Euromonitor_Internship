@@ -1,0 +1,100 @@
+
+<body>
+<app-header></app-header>
+<div class="container-fluid g-0 p-2">
+
+  <div class="row g-0 employee-row" *ngFor="let employee of employeesToDisplay">
+    <div class="col-md-2 d-flex justify-content-center align-items-center">
+      <img src="../../assets/ProfilePhoto/{{ employee.photo }}" alt="Profile Image" class="profile-img">
+    </div>
+    
+    <div class="col ps-2">
+      <div class="row g-0">
+        <div class="col-md-10 text-center">
+          <span class="name">{{ employee.FirstName | titlecase }} {{ employee.LastName | titlecase }}</span>
+        </div>
+      </div>
+
+      <div class="row g-0 mt-3">
+        <div class="col-md">
+          <table class="table table-hover mx-auto">
+            <thead class="text-center fs-5 fst-italic text-secondary">
+              <tr>
+                <td colspan="2">Personal Details</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Email</td>
+                <td>
+                  <span *ngIf="!isEditingEmail">{{ employee.Email }}</span>
+                  <input *ngIf="isEditingEmail" [(ngModel)]="editedEmail" />
+                  <button *ngIf="!isEditingEmail" (click)="startEditing('email')" class="edit-btn">Edit</button>
+                  <button *ngIf="isEditingEmail" (click)="saveChanges('email')" class="save-btn">Save</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Phone Number</td>
+                <td>
+                  <span *ngIf="!isEditingPhoneNumber">{{ employee.PhoneNumber }}</span>
+                  <input *ngIf="isEditingPhoneNumber" [(ngModel)]="editedPhoneNumber" />
+                  <button *ngIf="!isEditingPhoneNumber" (click)="startEditing('phoneNumber')" class="edit-btn">Edit</button>
+                  <button *ngIf="isEditingPhoneNumber" (click)="saveChanges('phoneNumber')" class="save-btn">Save</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col">
+          <table class="table table-hover mx-auto">
+            <thead class="text-center fs-5 fst-italic text-secondary">
+              <tr>
+                <td colspan="2">Job Details</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Department</td>
+                <td>{{ employee.Department | titlecase }}</td>
+              </tr>
+              <tr>
+                <td>Job Title</td>
+                <td>{{ employee.JobTitle }}</td>
+              </tr>
+              <tr>
+                <td>Hire Date</td>
+                <td>{{ employee.HireDate }}</td>
+              </tr>
+              <tr>
+                <td>Termination Date</td>
+                <td>{{ employee.TerminationDate }}</td>
+              </tr>
+              <tr>
+                <td>Active Status</td>
+                <td>{{ employee.IsActive }}</td>
+              </tr>
+              <tr>
+                <td>Created At</td>
+                <td>{{ employee.CreatedAt }}</td>
+              </tr>
+              <tr>
+                <td>Updated At</td>
+                <td>{{ employee.UpdatedAt }}</td>
+              </tr>
+              
+              <div class="col-md-2 d-flex justify-content-center align-items-center">
+                <a [href]="'../../assets/Appraisal/' + employee.appraisal" download class="download-link">
+                 Download Appraisal
+                </a>
+                </div>
+            </tbody>
+          </table>
+
+      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

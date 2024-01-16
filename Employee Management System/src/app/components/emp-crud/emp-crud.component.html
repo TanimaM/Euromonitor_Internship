@@ -1,0 +1,150 @@
+
+<div class="container-fluid g-0">
+
+    <app-header></app-header>
+
+    <main class="black-border">
+
+      <div class="toolbar">
+  
+        <div class="add-employee">
+          <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" #addEmployeeButton>Add Employee</button>
+        </div>
+  
+        <div class="search-employees">
+          <input type="search" class="form-control" placeholder="Search Employees"
+            (input)="searchEmployees(searchInput.value)" #searchInput>
+        </div>
+  
+      </div>
+
+      <div class="employees">
+  
+        <div class="row mt-5" *ngIf="employees.length == 0">
+          <div class="col text-center">
+            <span class="text-secondary fs-2 fw-bold fst-italic">There are No Employees Added!</span>
+          </div>
+        </div>
+  
+        <div class="row mt-4" *ngFor="let employee of employeesToDisplay; let ei = index;">
+          <div class="col">
+            <app-employee [employee]="employee" (onRemoveEmployee)="removeEmployee($event)"
+              (onEditEmployee)="editEmployee($event)"></app-employee>
+          </div>
+        </div>
+  
+      </div>
+    </main>
+  </div>
+
+  <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Enter Employee Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+  
+          <form [formGroup]="employeeForm">
+ 
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First Name" formControlName="FirstName">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last Name" formControlName="LastName">
+              </div>
+            </div>
+
+            <div class="row mt-5">
+              <div class="col form-heading">
+                <h6 class="text-secondary fst-italic">Personal Information</h6>
+              </div>
+            </div>
+  
+            <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Email" formControlName="Email">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Phone Number" formControlName="PhoneNumber">
+                </div>
+              </div>
+
+  
+            <div class="row mt-3">
+              <div class="col">
+                <label for="profile" class="form-label">Profile Image</label>
+                <input type="file" class="form-control" id="photo" #fileInput>
+              </div>
+            </div>
+
+            <div class="row mt-5">
+              <div class="col form-heading">
+                <h6 class="text-secondary fst-italic">Job Information</h6>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Department" formControlName="Department">
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Job Title" formControlName="JobTitle">
+                </div>
+              </div>
+  
+            <div class="row mt-3">
+              <div class="col">
+                <label for="hireDate">Hire Date</label>
+                <input type="date" class="form-control" placeholder="Hire Date"
+                  formControlName="HireDate">
+              </div>
+              <div class="col">
+                <label for="terminationDate">Termination Date</label>
+                <input type="date" class="form-control" placeholder="Termination Date" 
+                formControlName="TerminationDate">
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <input type="checkbox" class="form-check-input" id="isActive" formControlName="IsActive">
+                    <label class="form-check-label" for="isActive">Is Active</label>                    
+                </div>
+              </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                  <label for="createdAt">Created At</label>
+                  <input type="datetime-local" class="form-control" placeholder="Created At"
+                    formControlName="CreatedAt">
+                </div>
+                <div class="col">
+                  <label for="updatedAt">Updated At</label>
+                  <input type="datetime-local" class="form-control" placeholder="Updated At" 
+                  formControlName="UpdatedAt">
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col">
+                  <label for="appraisalFile" class="form-label">Appraisal File</label>
+                  <input type="file" class="form-control" id="appraisal" #appraisalFileInput>
+                </div>
+              </div>
+
+          </form>
+  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addEmployee()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>

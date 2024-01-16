@@ -1,0 +1,182 @@
+{
+  "userAccounts": [
+    {
+      "UserID": 1,
+      "Username": "janes",
+      "Password": "password1",
+      "RoleID": 1,
+      "RoleName": "Admin",
+      "EmployeeID": 1
+    },
+    {
+      "UserID": 2,
+      "Username": "rita",
+      "Password": "password2",
+      "RoleID": 2,
+      "RoleName": "Admin",
+      "EmployeeID": 2
+    },
+    {
+      "UserID": 3,
+      "Username": "peter",
+      "Password": "password3",
+      "RoleID": 3,
+      "RoleName": "Employee",
+      "EmployeeID": 3
+    },
+    {
+      "UserID": 4,
+      "Username": "shopiac",
+      "Password": "password4",
+      "RoleID": 2,
+      "RoleName": "Employee",
+      "EmployeeID": 5
+    },
+    {
+      "UserID": 5,
+      "Username": "justin",
+      "Password": "password5",
+      "RoleID": 3,
+      "RoleName": "Admin",
+      "EmployeeID": 7
+    },
+    {
+      "UserID": 6,
+      "Username": "emily",
+      "Password": "password6",
+      "RoleID": 2,
+      "RoleName": "Employee",
+      "EmployeeID": 6
+    }
+  ],
+  "employees": [
+    {
+      "FirstName": "Peter",
+      "LastName": "Smith",
+      "Email": "petersn@gmail.com",
+      "PhoneNumber": "999-222-333-558",
+      "Department": "IT",
+      "JobTitle": "Software Engineer",
+      "HireDate": "30-11-2020",
+      "TerminationDate": "",
+      "IsActive": true,
+      "CreatedAt": "2020",
+      "UpdatedAt": "2022",
+      "photo": "Profile01.jpg",
+      "id": 3,
+      "appraisal": "Appraisal1.xlsx"
+    },
+    {
+      "FirstName": "James",
+      "LastName": "Doe",
+      "Email": "james@gmail.com",
+      "PhoneNumber": "999-888-777-111",
+      "Department": "HR",
+      "JobTitle": "Hr Specialist",
+      "HireDate": "22-09-2020",
+      "TerminationDate": "",
+      "IsActive": true,
+      "CreatedAt": "2020",
+      "UpdatedAt": "2022",
+      "photo": "Profile04.jpg",
+      "id": 4,
+      "appraisal": "Appraisal2.xlsx"
+    },
+    {
+      "FirstName": "Jane",
+      "LastName": "Jones",
+      "Email": "janes@gmail.com",
+      "PhoneNumber": "999-888-777-223",
+      "Department": "Operations",
+      "JobTitle": "Operations Manager",
+      "HireDate": "2024-01-13",
+      "TerminationDate": "",
+      "IsActive": true,
+      "CreatedAt": "2020",
+      "UpdatedAt": "2022",
+      "photo": "Profile06.jpg",
+      "appraisal": "Appraisal3.xlsx",
+      "id": 1
+    },
+    {
+      "FirstName": "Rita",
+      "LastName": "S",
+      "Email": "rita@gmail.com",
+      "PhoneNumber": "999-222-333-558",
+      "Department": "Quality Assurance",
+      "JobTitle": "QA Analyst",
+      "HireDate": "30-11-2020",
+      "TerminationDate": "",
+      "IsActive": true,
+      "CreatedAt": "2020",
+      "UpdatedAt": "2022",
+      "photo": "Profile05.jpg",
+      "id": 2,
+      "appraisal": "Appraisal4.xlsx"
+    },
+    {
+      "FirstName": "Emily",
+      "LastName": "B",
+      "Email": "emily@gmail.com",
+      "PhoneNumber": "999-222-333-521",
+      "Department": "Finance",
+      "JobTitle": "Financial Analyst",
+      "HireDate": "2015-01-09",
+      "TerminationDate": "",
+      "IsActive": true,
+      "CreatedAt": "2024-01-08T19:33",
+      "UpdatedAt": "2024-01-14T19:35",
+      "photo": "Profile03.jpg",
+      "appraisal": "Appraisal6.xlsx",
+      "id": 6
+    },
+    {
+      "FirstName": "Shopia",
+      "LastName": "Clark",
+      "Email": "shopia@gmail.com",
+      "PhoneNumber": "999-222-333-666",
+      "Department": "Sales",
+      "JobTitle": "Sales Representative",
+      "HireDate": "2017-02-01",
+      "TerminationDate": "",
+      "IsActive": true,
+      "CreatedAt": "2017-05-04T11:02",
+      "UpdatedAt": "2024-01-02T21:03",
+      "photo": "Profile02.jpg",
+      "appraisal": "Appraisal5.xlsx",
+      "id": 7
+    }
+  ],
+  "departments": [
+    {
+      "departmentName": "Information Technology ",
+      "description": "Manages the company's technology infrastructure, including hardware, software, and networks. Ensures the security and functionality of IT systems.",
+      "id": 1
+    },
+    {
+      "departmentName": "Human Resource",
+      "description": "Manages employee recruitment, onboarding, benefits, payroll, and fosters a positive work environment. Handles personnel-related policies and issues.",
+      "id": 2
+    },
+    {
+      "departmentName": "Sales",
+      "description": "Focuses on selling products or services, maintaining customer relationships, and achieving revenue targets. Involves sales strategies and customer engagement.",
+      "id": 3
+    },
+    {
+      "departmentName": "Finance/ Accounting",
+      "description": "Manages financial transactions, budgeting, financial reporting, and ensures compliance with accounting standards. Handles taxation and financial planning.",
+      "id": 4
+    },
+    {
+      "departmentName": "Operations",
+      "description": "The Operations Department is a critical component of an organization responsible for overseeing and managing the day-to-day activities that are essential for the business to function efficiently. It plays a central role in ensuring that the company's processes run smoothly, resources are effectively utilized, and organizational goals are achieved. ",
+      "id": 5
+    },
+    {
+      "departmentName": "Quality Assurance (QA)",
+      "description": "Ensures the quality of products or services meets specified standards. Involves testing, inspections, and quality management processes.",
+      "id": 6
+    }
+  ]
+}

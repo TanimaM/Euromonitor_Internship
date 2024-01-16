@@ -1,0 +1,83 @@
+.container-fluid g-0{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .black-border {
+    border: 1px solid black;
+  }
+  
+  main {
+    width: 90%;
+    margin: 3rem auto 0px;
+  }
+  
+  .toolbar {
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .add-department{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-department {
+    width: 50%;
+    height: 90%;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px rgba(34, 34, 34, 0.5);
+  }
+  
+  .search-deparment input {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+  }
+  
+  app-department {
+    display: block;
+    width: 75%;
+    margin: 0px auto;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px rgba(34, 34, 34, 0.5);
+  }
+  
+  .form-heading {
+    border-top: 1px solid black;
+  }
+  
+  .form-heading h6 {
+    text-align: center;
+    background-color: white;
+    width: 200px;
+    transform: translateY(-50%);
+  }
+
+  @media (max-width: 1200px) {
+    .add-department,
+    .search-department,
+    app-department {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .search-department {
+      width: 70%;
+    }
+  
+    .add-department,
+    app-department {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }

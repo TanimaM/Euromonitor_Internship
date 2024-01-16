@@ -1,0 +1,73 @@
+
+<div class="container-fluid g-0">
+
+    <app-header></app-header>
+
+    <main class="black-border">
+
+      <div class="toolbar">
+  
+        <div class="add-department">
+          <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" #addDepartmentButton>Add Department</button>
+        </div>
+  
+        <div class="search-departments">
+          <input type="search" class="form-control" placeholder="Search Departments"
+            (input)="searchDepartments(searchInput.value)" #searchInput>
+        </div>
+  
+      </div>
+
+      <div class="departments">
+  
+        <div class="row mt-5" *ngIf="departments.length == 0">
+          <div class="col text-center">
+            <span class="text-secondary fs-2 fw-bold fst-italic">There are No Departments Added!</span>
+          </div>
+        </div>
+  
+        <div class="row mt-4" *ngFor="let department of departmentsToDisplay; let di = index;">
+          <div class="col">
+            <app-department [department]="department" (onRemoveDepartment)="removeDepartment($event)"
+              (onEditDepartment)="editDepartment($event)"></app-department>
+          </div>
+        </div>
+  
+      </div>
+    </main>
+  </div>
+
+  <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Enter Department Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+  
+          <form [formGroup]="departmentForm">
+
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Department Name" formControlName="departmentName">
+              </div>
+            </div>
+  
+            <div class="row mt-3">
+              <div class="col">
+                <textarea class="form-control" rows="3" placeholder="Description" formControlName="description"></textarea>
+              </div>
+            </div>
+  
+          </form>
+  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addDepartment()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
